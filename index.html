@@ -16,6 +16,7 @@
   <nav>
     <button data-tab="dashboard" class="tab-btn active">Dashboard</button>
     <button data-tab="apis" class="tab-btn">APIs</button>
+    <button data-tab="apikeys" class="tab-btn">API Management</button>
     <button data-tab="settings" class="tab-btn">Settings</button>
   </nav>
 </aside>
@@ -25,6 +26,7 @@
 
 <!-- Main Content -->
 <main>
+  <!-- Header -->
   <header>
     <h1>Dashboard</h1>
     <button id="theme-toggle">Toggle Theme</button>
@@ -57,6 +59,35 @@
       </thead>
       <tbody id="api-table-body"></tbody>
     </table>
+  </section>
+
+  <!-- API Management Tab -->
+  <section id="apikeys-tab" class="tab-content hidden">
+    <h2>API Key Management</h2>
+    <div class="apikey-section">
+      <input type="text" id="apikey-name" placeholder="API Key Name">
+      <button id="generate-apikey">Generate API Key</button>
+    </div>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>API Key</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="apikey-table-body"></tbody>
+    </table>
+
+    <h2>Create API Endpoint</h2>
+    <div class="create-api-section">
+      <input type="text" id="api-name" placeholder="API Name">
+      <input type="text" id="api-url" placeholder="API URL">
+      <select id="api-status">
+        <option value="true">Active</option>
+        <option value="false">Inactive</option>
+      </select>
+      <button id="add-api">Add API</button>
+    </div>
   </section>
 
   <!-- Settings Tab -->
