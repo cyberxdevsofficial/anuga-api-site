@@ -3,29 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANUWH API LIST</title>
+  <title>My API List</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
   <header>
     <h1>My API Sites</h1>
+    <button id="theme-toggle">Toggle Theme</button>
   </header>
 
+  <nav class="api-tabs">
+    <button data-tab="all">All APIs</button>
+    <button data-tab="active">Active APIs</button>
+    <button data-tab="inactive">Inactive APIs</button>
+  </nav>
+
   <main>
-    <section>
-      <h2>Active APIs</h2>
-      <div id="active-apis" class="api-container"></div>
-    </section>
-
-    <section>
-      <h2>Inactive APIs</h2>
-      <div id="inactive-apis" class="api-container"></div>
-    </section>
-
-    <section>
-      <h2>All APIs</h2>
-      <div id="all-apis" class="api-container"></div>
-    </section>
+    <div id="api-container" class="api-container"></div>
   </main>
 
   <script src="script.js"></script>
