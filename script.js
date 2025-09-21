@@ -1,4 +1,4 @@
-// List of APIs
+// API List
 const apis = [
   {
     name: "Share Text API",
@@ -13,39 +13,56 @@ const apis = [
 ];
 
 // Containers
-const activeContainer = document.getElementById('active-apis');
-const inactiveContainer = document.getElementById('inactive-apis');
-const allContainer = document.getElementById('all-apis');
+const apiContainer = document.getElementById('api-container');
 
-// Function to create API card
+// Theme Toggle
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  document.body.classList.toggle('dark');
+});
+
+// Create API Card
 function createApiCard(api) {
   const card = document.createElement('div');
   card.className = 'api-card';
 
-  const name = document.createElement('h3');
-  name.textContent = api.name;
+  const title = document.createElement('h3');
+  title.textContent = api.name;
 
-  const button = document.createElement('button');
-  button.textContent = "Go to API";
-  button.onclick = () => window.open(api.url, '_blank');
+  const btn = document.createElement('button');
+  btn.textContent = 'Go to API';
+  btn.onclick = () => window.open(api.url, '_blank');
 
-  card.appendChild(name);
-  card.appendChild(button);
-
+  card.appendChild(title);
+  card.appendChild(btn);
   return card;
 }
 
-// Add APIs to sections
-apis.forEach(api => {
-  const card = createApiCard(api);
+// Show APIs based on type
+function showApis(type) {
+  apiContainer.innerHTML = '';
 
-  // All APIs section
-  allContainer.appendChild(createApiCard(api));
-
-  // Active or inactive section
-  if (api.active) {
-    activeContainer.appendChild(card);
-  } else {
-    inactiveContainer.appendChild(card);
+  if(type === 'inactive') {
+    apiContainer.textContent = 'No inactive APIs';
+    apiContainer.style.color = '#0f0';
+    return;
   }
+
+  const filtered = type === 'active' ? apis.filter(a => a.active) : apis;
+  filtered.forEach(api => {
+    apiContainer.appendChild(createApiCard(api));
+  });
+}
+
+// Initial load: show all APIs
+showApis('all');
+
+// Tab buttons
+const tabButtons = document.querySelectorAll('.api-tabs button');
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.getAttribute('data-tab');
+    showApis(tab);
+  });
 });
