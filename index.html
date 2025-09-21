@@ -3,31 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANUGA SENITHU APIS</title>
+  <title>ANUGA SENITHU API DASHBOARD</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
-  <!-- Hacker Matrix Background Canvas -->
-  <canvas id="matrix-bg"></canvas>
 
-  <header>
-    <h1>ANUGA SENITHU APIS</h1>
-    <button id="theme-toggle">Toggle Theme</button>
-  </header>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>ANUGA SENITHU APIS</h2>
+    <nav>
+      <button data-tab="dashboard" class="active">Dashboard</button>
+      <button data-tab="apis">APIs</button>
+      <button data-tab="settings">Settings</button>
+    </nav>
+  </aside>
 
-  <nav class="api-tabs">
-    <button data-tab="all">All APIs</button>
-    <button data-tab="active">Active APIs</button>
-    <button data-tab="inactive">Inactive APIs</button>
-  </nav>
-
+  <!-- Main Content -->
   <main>
-    <div id="api-container" class="api-container"></div>
+    <header>
+      <h1>Dashboard</h1>
+      <button id="theme-toggle">Toggle Theme</button>
+    </header>
+
+    <section id="dashboard-tab" class="tab-content">
+      <div class="stats">
+        <div class="card">
+          <h3>Total APIs</h3>
+          <p id="total-apis">0</p>
+        </div>
+        <div class="card">
+          <h3>Active APIs</h3>
+          <p id="active-apis">0</p>
+        </div>
+        <div class="card">
+          <h3>Inactive APIs</h3>
+          <p id="inactive-apis">0</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="apis-tab" class="tab-content hidden">
+      <div class="api-buttons">
+        <button data-filter="all" class="filter-btn active">All APIs</button>
+        <button data-filter="active" class="filter-btn">Active APIs</button>
+        <button data-filter="inactive" class="filter-btn">Inactive APIs</button>
+      </div>
+      <div id="api-container" class="api-container"></div>
+    </section>
+
+    <section id="settings-tab" class="tab-content hidden">
+      <h2>Settings</h2>
+      <p>Settings will go here...</p>
+    </section>
   </main>
 
   <footer>
     © 2023-2025 | POWERED BY ANUGA SENITHU
   </footer>
+
+  <canvas id="matrix-bg"></canvas>
 
   <script src="script.js"></script>
 </body>
