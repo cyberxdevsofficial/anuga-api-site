@@ -30,23 +30,36 @@
     <button id="theme-toggle">Toggle Theme</button>
   </header>
 
+  <!-- Dashboard Tab -->
   <section id="dashboard-tab" class="tab-content">
     <div class="stats">
       <div class="card"><h3>Total APIs</h3><p id="total-apis">0</p></div>
       <div class="card"><h3>Active APIs</h3><p id="active-apis">0</p></div>
       <div class="card"><h3>Inactive APIs</h3><p id="inactive-apis">0</p></div>
+      <div class="card"><h3>Total Requests</h3><p id="total-requests">0</p></div>
     </div>
   </section>
 
+  <!-- APIs Tab -->
   <section id="apis-tab" class="tab-content hidden">
-    <div class="api-buttons">
-      <button data-filter="all" class="filter-btn active">All APIs</button>
-      <button data-filter="active" class="filter-btn">Active APIs</button>
-      <button data-filter="inactive" class="filter-btn">Inactive APIs</button>
+    <div class="api-filters">
+      <button data-filter="all" class="filter-btn active">All</button>
+      <button data-filter="active" class="filter-btn">Active</button>
+      <button data-filter="inactive" class="filter-btn">Inactive</button>
     </div>
-    <div id="api-container" class="api-container"></div>
+    <table class="api-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="api-table-body"></tbody>
+    </table>
   </section>
 
+  <!-- Settings Tab -->
   <section id="settings-tab" class="tab-content hidden">
     <h2>Settings</h2>
     <p>Settings will go here...</p>
