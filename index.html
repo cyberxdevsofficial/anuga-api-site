@@ -1,76 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ANUGA SENITHU API DASHBOARD</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANUGA SENITHU API DASHBOARD</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
 
-  <!-- Matrix Background -->
-  <canvas id="matrix-bg"></canvas>
+<canvas id="matrix-bg"></canvas>
 
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
-    <h2>ANUGA SENITHU APIS</h2>
-    <nav>
-      <button data-tab="dashboard" class="active">Dashboard</button>
-      <button data-tab="apis">APIs</button>
-      <button data-tab="settings">Settings</button>
-    </nav>
-  </aside>
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <h2>ANUGA SENITHU APIS</h2>
+  <nav>
+    <button data-tab="dashboard" class="active">Dashboard</button>
+    <button data-tab="apis">APIs</button>
+    <button data-tab="settings">Settings</button>
+  </nav>
+</aside>
 
-  <!-- Hamburger Menu -->
-  <button id="menu-btn">&#9776;</button>
+<!-- Hamburger Menu -->
+<button id="menu-btn">&#9776;</button>
 
-  <!-- Main Content -->
-  <main>
-    <header>
-      <h1>Dashboard</h1>
-      <button id="theme-toggle">Toggle Theme</button>
-    </header>
+<!-- Main Content -->
+<main>
+  <header>
+    <h1>Dashboard</h1>
+    <button id="theme-toggle">Toggle Theme</button>
+  </header>
 
-    <!-- Dashboard Tab -->
-    <section id="dashboard-tab" class="tab-content">
-      <div class="stats">
-        <div class="card">
-          <h3>Total APIs</h3>
-          <p id="total-apis">0</p>
-        </div>
-        <div class="card">
-          <h3>Active APIs</h3>
-          <p id="active-apis">0</p>
-        </div>
-        <div class="card">
-          <h3>Inactive APIs</h3>
-          <p id="inactive-apis">0</p>
-        </div>
-      </div>
-    </section>
+  <section id="dashboard-tab" class="tab-content">
+    <div class="stats">
+      <div class="card"><h3>Total APIs</h3><p id="total-apis">0</p></div>
+      <div class="card"><h3>Active APIs</h3><p id="active-apis">0</p></div>
+      <div class="card"><h3>Inactive APIs</h3><p id="inactive-apis">0</p></div>
+    </div>
+  </section>
 
-    <!-- APIs Tab -->
-    <section id="apis-tab" class="tab-content hidden">
-      <div class="api-buttons">
-        <button data-filter="all" class="filter-btn active">All APIs</button>
-        <button data-filter="active" class="filter-btn">Active APIs</button>
-        <button data-filter="inactive" class="filter-btn">Inactive APIs</button>
-      </div>
-      <div id="api-container" class="api-container"></div>
-    </section>
+  <section id="apis-tab" class="tab-content hidden">
+    <div class="api-buttons">
+      <button data-filter="all" class="filter-btn active">All APIs</button>
+      <button data-filter="active" class="filter-btn">Active APIs</button>
+      <button data-filter="inactive" class="filter-btn">Inactive APIs</button>
+    </div>
+    <div id="api-container" class="api-container"></div>
+  </section>
 
-    <!-- Settings Tab -->
-    <section id="settings-tab" class="tab-content hidden">
-      <h2>Settings</h2>
-      <p>Settings will go here...</p>
-    </section>
-  </main>
+  <section id="settings-tab" class="tab-content hidden">
+    <h2>Settings</h2>
+    <p>Settings will go here...</p>
+  </section>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    © 2023-2025 | POWERED BY ANUGA SENITHU
-  </footer>
+<footer>© 2023-2025 | POWERED BY ANUGA SENITHU</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
