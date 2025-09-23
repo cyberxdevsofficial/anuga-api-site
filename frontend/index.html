@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANUGA SENITHU APIS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+<canvas id="matrix-bg"></canvas>
+
+<div class="topbar">
+  <button id="menu-btn">&#9776;</button>
+  <div class="title">ANUGA SENITHU APIS</div>
+  <div id="user-area"></div>
+</div>
+
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <button data-tab="dashboard" class="tab-btn active">Dashboard</button>
+    <button data-tab="apis" class="tab-btn">APIs</button>
+    <button data-tab="apikeys" class="tab-btn">API Management</button>
+    <button data-tab="settings" class="tab-btn">Settings</button>
+  </nav>
+</aside>
+
+<main>
+  <section id="dashboard-tab" class="tab-content">
+    <div class="stats">
+      <div class="card"><h3>Total APIs</h3><p id="total-apis">0</p></div>
+      <div class="card"><h3>Active APIs</h3><p id="active-apis">0</p></div>
+      <div class="card"><h3>Inactive APIs</h3><p id="inactive-apis">0</p></div>
+      <div class="card"><h3>Total Requests</h3><p id="total-requests">0</p></div>
+    </div>
+  </section>
+
+  <section id="apis-tab" class="tab-content hidden">
+    <div class="api-filters">
+      <button data-filter="all" class="filter-btn active">All APIs</button>
+      <button data-filter="active" class="filter-btn">Active APIs</button>
+      <button data-filter="inactive" class="filter-btn">Inactive APIs</button>
+    </div>
+    <table class="api-table">
+      <thead><tr><th>Name</th><th>Status</th><th>Requests</th><th>Action</th></tr></thead>
+      <tbody id="api-table-body"></tbody>
+    </table>
+  </section>
+
+  <section id="apikeys-tab" class="tab-content hidden">
+    <h2>API Key Management</h2>
+    <div class="apikey-section">
+      <input id="apikey-name" placeholder="Key name (optional)">
+      <button id="generate-apikey">Generate API Key</button>
+    </div>
+    <table class="api-table">
+      <thead><tr><th>Key</th><th>Name</th><th>Action</th></tr></thead>
+      <tbody id="apikey-table-body"></tbody>
+    </table>
+
+    <h2>Create API Endpoint</h2>
+    <div class="create-api-section">
+      <input id="api-name" placeholder="API name">
+      <input id="api-url" placeholder="API url">
+      <select id="api-status"><option value="true">Active</option><option value="false">Inactive</option></select>
+      <button id="add-api">Add API</button>
+    </div>
+  </section>
+
+  <section id="settings-tab" class="tab-content hidden">
+    <h2>Settings</h2>
+    <p>Configure your dashboard settings here.</p>
+  </section>
+</main>
+
+<footer>© 2023-2025 | POWERED BY ANUGA SENITHU</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
